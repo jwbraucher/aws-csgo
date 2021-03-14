@@ -33,7 +33,7 @@
 			"ami_virtualization_type": "hvm",
 			"associate_public_ip_address": true,
 			"instance_type": "{{ user `instance_type` }}",
-			"ami_block_device_mappings" : [
+			"launch_block_device_mappings" : [
 					{
 					"delete_on_termination": true,
 					"device_name": "{{ user `steam_volume_device_name` }}",
