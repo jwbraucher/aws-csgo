@@ -25,9 +25,11 @@ phases:
          - curl -s https://releases.hashicorp.com/packer/1.7.0/packer_1.7.0_linux_amd64.zip -o packer.zip
          - unzip packer.zip -d /usr/bin
          - apt update
-         - apt install software-properties-common
+         - apt install -y software-properties-common
+         - apt-get install -y --no-install-recommends tzdata
          - apt-add-repository --yes --update ppa:ansible/ansible
          - apt install -y ansible
+         - dpkg-query -L ansible
          - packer build template.json
          - cat -- manifest.json
          - |
