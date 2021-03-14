@@ -521,7 +521,7 @@ Resources:
          Environment:
             Type: LINUX_CONTAINER
             ComputeType: BUILD_GENERAL1_SMALL
-            Image: !Sub '${AWS::AccountId}.dkr.ecr.${AWS::Region}.amazonaws.com/ami-build-env'
+            Image: !Sub '${AWS::AccountId}.dkr.ecr.${AWS::Region}.amazonaws.com/aws/codebuild/standard:5.0'
             PrivilegedMode: false
             EnvironmentVariables:
                -

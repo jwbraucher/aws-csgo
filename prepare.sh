@@ -2,23 +2,11 @@
 
 set -e
 
-if test -r /etc/os-release
-then
-	. /etc/os-release
-	
-	if test "$ID" = 'ubuntu'
-	then
-		export DEBIAN_FRONTEND=noninteractive
-		
-		sudo apt-get -qq update
-		sudo apt-get -qq install python-minimal
-		
-		exit 0
-	fi
-elif test -r /etc/arch-release
-then
-	exec pacman --color never --noprogressbar --noconfirm -Sqy python
-fi
+export DEBIAN_FRONTEND=noninteractive
 
-echo 'Unknown, possibly unsupported operating system'
-exit 1
+# bootstrap ansible and awscli because they are needed for provisioning
+# and also so that they are available on the ami later
+sudo apt update
+sudo apt install -y python3-pip
+sudo pip3 install --no-cache-dir ansible awscli
+

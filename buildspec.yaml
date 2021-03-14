@@ -22,6 +22,11 @@ phases:
          #- curl -sS -o steamcmd.tar.gz 'http://media.steampowered.com/installer/steamcmd_linux.tar.gz'
          #- mkdir -p roles/csgo_server/files
          #- tar -xzf steamcmd.tar.gz -C roles/csgo_server/files
+         - curl -s https://releases.hashicorp.com/packer/1.7.0/packer_1.7.0_linux_amd64.zip -o packer.zip
+         - unzip packer.zip -d /usr/bin
+         - apt update
+         - apt install -y python3-pip
+         - pip3 install --no-cache-dir ansible awscli
          - packer build template.json
          - cat -- manifest.json
          - |
