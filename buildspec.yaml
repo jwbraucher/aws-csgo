@@ -6,6 +6,7 @@ env:
       INSTANCE_TYPE: 'c5.large'
       SHELL_EXECUTE_COMMAND: '/bin/sh -ex --'
       SSH_USER: 'ubuntu'
+      ANSIBLE_PYTHON_INTERPRETER: '/usr/bin/python'
    parameter-store:
       PRIVATE_KEY: '/csgo/ssh-key'
 
@@ -28,7 +29,7 @@ phases:
          - apt-add-repository --yes --update ppa:ansible/ansible
          - apt install -y ansible
          - dpkg-query -L ansible
-         - env ANSIBLE_PYTHON_INTERPRETER=/usr/bin/python packer build template.json
+         - packer build template.json
          - cat -- manifest.json
          - |
             AMI_ID="$(jq -r '.builds[0].artifact_id' -- manifest.json | cut -d : -f 2)"
