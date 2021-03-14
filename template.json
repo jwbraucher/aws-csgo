@@ -36,7 +36,7 @@
 			"launch_block_device_mappings": [
 				{
 					"delete_on_termination": true,
-					"device_name": "{{ user `steam_volume_device_name` }}",
+					"device_name": "/dev/xvdf",
 					"encrypted": false,
 					"volume_size": 18
 				}
