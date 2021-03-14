@@ -12,6 +12,9 @@ then
 		
 		sudo apt-get -qq update
 		sudo apt-get -qq install python-minimal
+        sudo apt update
+        sudo apt-add-repository --yes --update ppa:ansible/ansible
+        sudo apt install -y ansible
 		
 		exit 0
 	fi

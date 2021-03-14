@@ -25,10 +25,6 @@ phases:
          #- tar -xzf steamcmd.tar.gz -C roles/csgo_server/files
          - curl -s https://releases.hashicorp.com/packer/1.7.0/packer_1.7.0_linux_amd64.zip -o packer.zip
          - unzip packer.zip -d /usr/bin
-         - apt update
-         - apt-add-repository --yes --update ppa:ansible/ansible
-         - apt install -y ansible
-         - dpkg-query -L ansible
          - packer build template.json
          - cat -- manifest.json
          - |

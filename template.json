@@ -21,7 +21,6 @@
 			"playbook_file": "playbook.yaml",
 			"user": "{{ user `ssh_user` }}",
 			"extra_arguments": [
-				"-vv",
 				"--extra-vars",
 				"ansible_python_interpreter=/usr/bin/python region={{ user `region` }} steam_volume_device_name={{ user `steam_volume_device_name` }}"
 			]
