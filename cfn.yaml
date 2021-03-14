@@ -5,13 +5,15 @@ Parameters:
    AmiBuildSubnetAvailabilityZone:
       Description: 'Availability zone in which to create the subnet used to build the AMI. It must support CodeBuild.'
       Type: AWS::EC2::AvailabilityZone::Name
+      Default: 'us-east-2a'
    CodeRepositoryCloneUrlHttp:
       Description: 'HTTP clone URL of the GitHub repository containing the aws-csgo code.'
       Type: String
-      Default: 'https://github.com/kalrish/aws-csgo.git'
+      Default: 'https://github.com/jwbraucher/aws-csgo.git'
    NatInstanceImageId:
       Description: 'ID of the AMI to use for the NAT instance.'
       Type: AWS::EC2::Image::Id
+      Default: 'ami-0f6592de998750ca7'
    NatInstanceKeyName:
       Description: 'Name of the key pair to assign to the NAT instance, used to SSH into it.'
       Type: AWS::EC2::KeyPair::KeyName
