@@ -6,7 +6,7 @@
 		"shell_execute_command": "{{ env `SHELL_EXECUTE_COMMAND` }}",
 		"source_ami_id": "{{ env `SOURCE_AMI_ID` }}",
 		"ssh_user": "{{ env `SSH_USER` }}",
-		"steam_volume_device_name": "/dev/xvda",
+		"steam_volume_device_name": "/dev/xvdf",
 		"subnet_id": "{{ env `INSTANCE_SUBNET` }}",
 		"vpc_id": "{{ env `INSTANCE_VPC` }}"
 	},
@@ -38,7 +38,7 @@
 					"delete_on_termination": true,
 					"device_name": "{{ user `steam_volume_device_name` }}",
 					"encrypted": false,
-					"volume_size": 30,
+					"volume_size": 18,
 					"volume_type" : "gp2"
 					}
 			],

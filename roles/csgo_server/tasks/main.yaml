@@ -65,22 +65,22 @@
   command: udevadm trigger --verbose
   become: yes
   become_user: root
-    # - name: Format Steam volume
-    #   filesystem:
-    #      dev: '{{ steam_volume_device_name }}'
-    #      fstype: ext4
-    #      opts: '-v -m 0 -E lazy_itable_init=0,lazy_journal_init=0'
-    #   become: yes
-    #   become_user: root
-    # - name: Mount Steam volume
-    #   mount:
-    #      state: mounted
-    #      src: '{{ steam_volume_device_name }}'
-    #      fstype: ext4
-    #      opts: 'nodev,nofail,nosuid,rw'
-    #      path: '{{ steam_home }}'
-    #   become: yes
-    #   become_user: root
+- name: Format Steam volume
+  filesystem:
+     dev: '{{ steam_volume_device_name }}'
+     fstype: ext4
+     opts: '-v -m 0 -E lazy_itable_init=0,lazy_journal_init=0'
+  become: yes
+  become_user: root
+- name: Mount Steam volume
+  mount:
+     state: mounted
+     src: '{{ steam_volume_device_name }}'
+     fstype: ext4
+     opts: 'nodev,nofail,nosuid,rw'
+     path: '{{ steam_home }}'
+  become: yes
+  become_user: root
 - name: Create Steam group
   group:
      state: present
