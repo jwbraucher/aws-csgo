@@ -38,7 +38,7 @@
 					"delete_on_termination": true,
 					"device_name": "/dev/xvdf",
 					"encrypted": false,
-					"volume_size": 18
+					"volume_size": 40
 				}
 			],
 			"run_tags": {
