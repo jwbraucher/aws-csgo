@@ -1,3 +1,5 @@
+lsblk
+
 # This script installs Python on the instance, which is required by Ansible to execute many of its modules after it uploads them
 
 export DEBIAN_FRONTEND=noninteractive
