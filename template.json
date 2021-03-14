@@ -6,7 +6,7 @@
 		"shell_execute_command": "{{ env `SHELL_EXECUTE_COMMAND` }}",
 		"source_ami_id": "{{ env `SOURCE_AMI_ID` }}",
 		"ssh_user": "{{ env `SSH_USER` }}",
-		"steam_volume_device_name": "/dev/nvme1n1",
+		"steam_volume_device_name": "/dev/nvme1",
 		"subnet_id": "{{ env `INSTANCE_SUBNET` }}",
 		"vpc_id": "{{ env `INSTANCE_VPC` }}"
 	},
